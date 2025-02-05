@@ -5,7 +5,7 @@ provider "aws" {
 
 # Call the VPC module
 module "vpc" {
-  source = "./modules/vpc/"  # Path to the VPC module
+  source = "./modules/vpc/variables.tf"  # Path to the VPC module
 
   vpc_cidr_block             = var.vpc_cidr_block
   vpc_name                   = var.vpc_name

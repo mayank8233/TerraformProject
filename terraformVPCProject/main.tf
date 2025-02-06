@@ -1,11 +1,11 @@
 # Specify the Terraform provider (AWS in this case)
 provider "aws" {
-  region = "ap-south-1"  # Mumbai Region (Change this if needed)
+  region = var.aws_region  # Mumbai Region (Change this if needed)
 }
 
 # Call the VPC module
 module "vpc" {
-  source = "./modules/vpc/variables.tf"  # Path to the VPC module
+  source = "./modules/vpc"  # Path to the VPC module
 
   vpc_cidr_block             = var.vpc_cidr_block
   vpc_name                   = var.vpc_name
